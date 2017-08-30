@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('teams', 'TeamsController@index');
+Route::get('teams/{id}', 'TeamsController@show');
