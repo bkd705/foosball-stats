@@ -9,15 +9,15 @@ use App\Team;
 class TeamsController extends Controller
 {
     public function index() {
-        return view('team.index', [ 'teams' => Team::findAll() ]);
+        return view('teams.index', [ 'teams' => Team::all() ]);
     }
 
     public function show($id) {
-        return view('team.show', [ 'team' => Team::findOrFail($id) ]);
+        return view('teams.show', [ 'team' => Team::findOrFail($id) ]);
     }
 
     public function create() {
-        return view('team.create');
+        return view('teams.create');
     }
 
     public function store(Request $request) {

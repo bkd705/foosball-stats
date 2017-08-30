@@ -9,7 +9,7 @@ use App\Game;
 class GamesController extends Controller
 {
     public function index() {
-        return view('games.index', [ 'games' => Game::findAll() ]);
+        return view('games.index', [ 'games' => Game::all() ]);
     }
 
     public function show($id) {

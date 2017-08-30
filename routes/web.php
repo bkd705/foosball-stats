@@ -11,12 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'DashboardController@index');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('teams', 'TeamsController@index');
-Route::get('teams/{id}', 'TeamsController@show');
+Route::resource('teams', 'TeamsController');
